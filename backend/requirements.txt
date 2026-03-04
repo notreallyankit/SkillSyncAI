@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+pymupdf
+python-docx
+faiss-cpu
+llama-index
+openai
+python-dotenv
