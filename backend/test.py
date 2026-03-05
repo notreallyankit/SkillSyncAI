@@ -5,6 +5,7 @@ from pathlib import Path
 from app.ingestion.pipeline import run_ingestion
 from app.utils.config import RAW_DOCS_DIR, INDEX_DIR
 from app.embedding.embedder import embed_query
+from app.generation.generator import generate_resume_bullets   # NEW
 
 INDEX_PATH = INDEX_DIR / "faiss.index"
 METADATA_PATH = INDEX_DIR / "metadata.json"
@@ -52,7 +53,7 @@ print("Metadata entries:", len(metadata))
 # -------------------------
 
 query = """
-Looking for experience in Python automation and robotframework with internship experience
+Looking for experience in Python automation and Robot Framework with internship experience
 """
 
 print("\nQuery:")
@@ -65,15 +66,29 @@ distances, indices = index.search(query_vector, 5)
 
 
 # -------------------------
-# STEP 5 — PRINT RESULTS
+# STEP 5 — COLLECT MATCHES
 # -------------------------
+
+retrieved_chunks = []
 
 print("\nTop Matches:\n")
 
 for i in indices[0]:
-
     if i < len(metadata):
-        print("-", metadata[i]["text"])
+        text = metadata[i]["text"]
+        retrieved_chunks.append(text)
+        print("-", text)
+
+
+# -------------------------
+# STEP 6 — GENERATE OUTPUT
+# -------------------------
+
+print("\nGenerating tailored resume bullets using Llama3...\n")
+
+generated = generate_resume_bullets(query, retrieved_chunks)
+
+print(generated)
 
 
 print("\n===== TEST COMPLETE =====\n")

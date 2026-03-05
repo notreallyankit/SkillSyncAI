@@ -1,0 +1,62 @@
+[
+  {
+    "text": "Ankit Tojo Email: ankittojo0017@gmail.com Mobile:- +91 97399 69102 Linkedin: linkedin.com/in/ankit-tojo-4ab13b261/ Github: github.com/notreallyankit Education"
+  },
+  {
+    "text": "\u2022 Manipal Institute of Technology, Manipal Udupi, India Bachelor of Technology - Computer and Communication Engineering 2022 -2026 CGPA: 7.1 Relevant Courses: Data Structures, Object Oriented Programming, Artificial Intelligence, Machine Learning, Cloud Technology, Operating Systems, Principles of Data Communication, Computer Networks and Protocols, Embedded System Design, Database Management Systems, Information Security, Foundations of IoT"
+  },
+  {
+    "text": "\u2022 Presidency School Bangalore South Bangalore, India Secured 9.2 CGPA in 10th and 8.94 CGPA in 12th PCMC. 2008-2022 Skills Summary"
+  },
+  {
+    "text": "\u2022 Languages: Python, C, Java, SQL, Android Studio"
+  },
+  {
+    "text": "\u2022 Tools and Frameworks: Pandas, Numpy, Tensorflow, Keras, Matplotlib, Postman, Robotframework, Selenium, Git, Typer"
+  },
+  {
+    "text": "\u2022 Web development: HTML-5, CSS-3, JavaScript"
+  },
+  {
+    "text": "\u2022 Operating System: Windows, Linux Experience"
+  },
+  {
+    "text": "\u2022 Siemens Technology and Services Pvt. Ltd - Technical Intern: May 2025 - August 2025"
+  },
+  {
+    "text": "\u25e6Worked as part of FT D AA IN DASS team, contributing to the testing of WinCC Unified Runtime Manager v4.0.0, a web-based industrial HMI (Human-Machine Interface) platform used for real-time visualization and control of factory automation systems."
+  },
+  {
+    "text": "\u25e6Automated 50+ test cases for web UI features using Robot Framework and Python, gaining hands-on experience in web automation, Git and test-driven development."
+  },
+  {
+    "text": "\u25e6Participated in Agile sprints, attended daily stand-ups, and collaborated with peers and co-interns to improve team communication and software quality."
+  },
+  {
+    "text": "\u25e6Supported team members with debugging test cases and contributed to improving test coverage from 18% to 81%. Projects"
+  },
+  {
+    "text": "\u2022 SynesthAI - Music To Colour Visualizer (Python, TensorFlow/Keras, Librosa, NumPy): Developed a deep learning-based audio analysis system that predicts music mood by extracting segment-wise audio features and mapping them to HSV color representations by using a bi-directional LSTM model."
+  },
+  {
+    "text": "\u2022 Clip-OCR - Hotkey Powered OCR Clipboard (Google Tesseract OCR Engine, pytesseract, PIL): Built a Python-powered desktop utility that integrates Google\u2019s Tesseract OCR engine with system clipboard automation using pytesseract. Designed a global hotkey trigger to capture images and extract text in real time, enhancing productivity by enabling seamless text reuse from screenshots and documents."
+  },
+  {
+    "text": "\u2022 STierMix - Spotify Playlist Generator (HTML, CSS, JavaScript, Spotify Oauth): Developed an interactive web application using HTML, CSS, and JavaScript that enables users to create personalized Spotify playlists by inputting songs and receiving AI-driven recommendations. Integrated the Spotify API to automatically add playlists to user accounts, delivering an intuitive and user-friendly experience."
+  },
+  {
+    "text": "\u2022 OpenSSH LIDS - Intrusion Detection System (Python): Designed and implemented a Python-based intrusion detection system for OpenSSH, analyzing Event Viewer logs to identify multiple failed login attempts. Integrated IP geolocation tracking to pinpoint and map potential intrusion sources, and automated real-time alerts to enhance system monitoring and accelerate response times."
+  },
+  {
+    "text": "\u2022 Flick - Serverless File Transfer CLI(Python, Typer, socket): Built a serverless file transfer terminal application, Flick-CLI, using Python, Socket (TCP/UDP), Threading, Typer (for CLI), and Rich (for terminal UI). Designed a hub-PC model enabling seamless peer-to-peer file sharing of text, images, videos, and PDFs without external servers. Implemented efficient file handling with os and json modules, ensuring reliability and cross-platform compatibility. Extra-Curricular Activities"
+  },
+  {
+    "text": "\u2022 Coordinated the design, production, and distribution of certificates and prizes for TechTatva \u201923, the national-level technical fest of Manipal Institute of Technology, ensuring accurate and timely delivery by collaborating with team members and event organizers."
+  },
+  {
+    "text": "\u2022 Served as a Working Committee member of the Design domain at IECSE, the official Computer Science club of MIT, actively participating in workshops and talks to gain insights into web development"
+  },
+  {
+    "text": "\u2022 Hobbies: Playing football, guitarist, and sketching."
+  }
+]
