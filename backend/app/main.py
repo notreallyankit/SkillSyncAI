@@ -1,5 +1,7 @@
 from fastapi import FastAPI, UploadFile, File
 import shutil
+from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.ingestion.pipeline import run_ingestion
 from app.retrieval.retriever import retrieve_similar_chunks
@@ -8,6 +10,16 @@ from app.utils.config import RAW_DOCS_DIR
 
 app = FastAPI()
 
+class JobRequest(BaseModel):
+    job_description: str
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def home():
@@ -31,13 +43,13 @@ async def upload_resume(file: UploadFile = File(...)):
 
 
 @app.post("/generate")
-async def generate(job_description: str):
+async def generate(req: JobRequest):
 
-    retrieved_chunks = retrieve_similar_chunks(job_description, top_k=5)
+    chunks = retrieve_similar_chunks(req.job_description, top_k=5)
 
-    output = generate_resume_bullets(job_description, retrieved_chunks)
+    output = generate_resume_bullets(req.job_description, chunks)
 
     return {
-        "retrieved_context": retrieved_chunks,
+        "retrieved_chunks": chunks,
         "generated_output": output
     }

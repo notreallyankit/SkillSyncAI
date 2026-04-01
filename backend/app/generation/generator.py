@@ -1,18 +1,22 @@
-import requests
+import os
+from groq import Groq
+from dotenv import load_dotenv
 
-
-OLLAMA_URL = "http://localhost:11434/api/generate"
-
+load_dotenv()
 
 def generate_resume_bullets(job_description, retrieved_chunks):
-
+    client = Groq(api_key=os.getenv("GROQ_API_KEY"))
     context = "\n".join(retrieved_chunks)
 
     prompt = f"""
-You are an AI career assistant.
+You are an expert resume optimizer.
 
-Use ONLY the experience provided below.
-Do not invent new skills.
+STRICT RULES:
+- Use ONLY the candidate experience provided
+- Do NOT invent tools, technologies, or achievements
+- Each bullet must start with a strong action verb
+- Each bullet must include measurable impact where possible
+- Align wording with the job description keywords
 
 Candidate Experience:
 {context}
@@ -20,16 +24,21 @@ Candidate Experience:
 Job Description:
 {job_description}
 
-Write 4 resume bullet points tailored for this job.
+TASK:
+Generate exactly 4 high-quality resume bullet points.
+
+FORMAT:
+- One line per bullet
+- No explanations
+- No numbering
+- No extra text
 """
 
-    response = requests.post(
-        OLLAMA_URL,
-        json={
-            "model": "llama3",
-            "prompt": prompt,
-            "stream": False
-        }
+    response = client.chat.completions.create(
+        model="llama-3.1-8b-instant",
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
     )
 
-    return response.json()["response"]
+    return response.choices[0].message.content
